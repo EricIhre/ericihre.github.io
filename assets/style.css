@@ -16,6 +16,13 @@
 
 * { box-sizing: border-box; }
 
+/* Always reserve room for the scrollbar so the header and margins
+   don't shift sideways between short and long pages */
+html {
+  scrollbar-gutter: stable;
+  overflow-y: scroll;
+}
+
 body {
   margin: 0;
   background: var(--bg);
@@ -75,7 +82,12 @@ main {
 h1 {
   font-weight: 400;
   font-size: 2.2rem;
-  margin: 0 0 1rem;
+  margin: 0 0 2rem;
+}
+
+/* Same gap between the page title and the first content on every page */
+h1 + section > h2:first-child {
+  margin-top: 0;
 }
 
 footer {
@@ -105,6 +117,11 @@ h2 {
   grid-template-columns: minmax(0, 1fr) auto;
   gap: 0 1.5rem;
   margin-bottom: 1.25rem;
+}
+
+/* Research: "Paper:" / "Master's thesis:" label before the title */
+.entries .kind {
+  font-weight: 600;
 }
 
 /* Research entries get more breathing room */
