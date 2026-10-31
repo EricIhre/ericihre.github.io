@@ -107,6 +107,11 @@ h2 {
   margin-bottom: 1.25rem;
 }
 
+/* Research entries get more breathing room */
+main > .entries > li {
+  margin-bottom: 2rem;
+}
+
 .entries .org {
   font-weight: 500;
 }
@@ -150,6 +155,25 @@ h2 {
 .entries .details li {
   display: list-item;
   margin-bottom: 0.2rem;
+}
+
+/* Research: summary paragraph and links under an entry */
+.entries .summary,
+.entries .links {
+  grid-column: 1 / -1;
+  margin: 0.4rem 0 0;
+}
+
+.entries .links a,
+.entries .details a {
+  color: var(--text);
+  text-decoration-color: var(--muted);
+  text-underline-offset: 0.15em;
+}
+
+.entries .links a:hover,
+.entries .details a:hover {
+  text-decoration-color: var(--text);
 }
 
 /* Skills: label on the left, text on the right */
