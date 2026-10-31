@@ -139,6 +139,11 @@ main > .entries > li {
   font-style: italic;
 }
 
+/* Secondary lines (exchanges, summer school) are not italic */
+.entries .role.note {
+  font-style: normal;
+}
+
 .entries .role-years {
   font-style: normal;
   font-variant-numeric: oldstyle-nums;
