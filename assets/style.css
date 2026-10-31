@@ -138,10 +138,9 @@ h2 {
   font-variant-numeric: oldstyle-nums;
 }
 
-/* Line separating the CV sections */
-section + section {
-  margin-top: 2.5rem;
-  border-top: 1px solid var(--rule);
+/* Home page: first heading lines up with the top of the photo */
+.home-content > section:first-child h2 {
+  margin-top: 0;
 }
 
 /* Home page: photo on the left, CV entries on the right */
