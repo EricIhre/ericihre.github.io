@@ -83,3 +83,53 @@ footer {
   font-size: 0.95rem;
   padding-bottom: 2rem;
 }
+
+h2 {
+  font-weight: 500;
+  font-size: 1.35rem;
+  margin: 2.5rem 0 1rem;
+  padding-bottom: 0.25rem;
+  border-bottom: 1px solid var(--rule);
+}
+
+.entries {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.entries li {
+  display: grid;
+  grid-template-columns: 9rem 1fr;
+  gap: 0 1.5rem;
+  margin-bottom: 1.1rem;
+}
+
+.entries .years {
+  color: var(--muted);
+  font-variant-numeric: oldstyle-nums;
+}
+
+.entries .org,
+.entries .role {
+  display: block;
+}
+
+.entries .org {
+  font-weight: 500;
+}
+
+.entries .role {
+  font-style: italic;
+}
+
+.entries .sub-years {
+  font-style: normal;
+  color: var(--muted);
+}
+
+@media (max-width: 520px) {
+  .entries li {
+    grid-template-columns: 1fr;
+  }
+}
