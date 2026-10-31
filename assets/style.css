@@ -101,7 +101,7 @@ h2 {
 /* Each entry: title | years on the first row, roles | location below */
 .entries li {
   display: grid;
-  grid-template-columns: 1fr auto;
+  grid-template-columns: minmax(0, 1fr) auto;
   gap: 0 1.5rem;
   margin-bottom: 1.25rem;
 }
@@ -142,6 +142,46 @@ h2 {
 section + section {
   margin-top: 2.5rem;
   border-top: 1px solid var(--rule);
+}
+
+/* Home page: photo on the left, CV entries on the right */
+.home {
+  display: grid;
+  grid-template-columns: 13rem minmax(0, 1fr);
+  gap: 3rem;
+  align-items: start;
+}
+
+.photo {
+  aspect-ratio: 3 / 4;
+  border: 1px dashed var(--muted);
+  border-radius: 4px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--muted);
+  font-style: italic;
+}
+
+@media (max-width: 720px) {
+  .home {
+    grid-template-columns: 1fr;
+    gap: 1.5rem;
+  }
+  .photo {
+    width: 10rem;
+  }
+}
+
+/* Phones: let long locations wrap instead of overflowing */
+@media (max-width: 520px) {
+  .entries li {
+    gap: 0 0.75rem;
+  }
+  .entries .location {
+    white-space: normal;
+    max-width: 7rem;
+  }
 }
 
 /* No blinking text cursor or focus outline when clicking with the mouse.
