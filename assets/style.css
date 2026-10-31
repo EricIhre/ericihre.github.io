@@ -1,0 +1,85 @@
+:root {
+  --bg: #fdfcf8;
+  --text: #1f1d1a;
+  --muted: #6b665e;
+  --rule: #e4e0d6;
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --bg: #161513;
+    --text: #e9e5dc;
+    --muted: #9a948a;
+    --rule: #2e2c28;
+  }
+}
+
+* { box-sizing: border-box; }
+
+body {
+  margin: 0;
+  background: var(--bg);
+  color: var(--text);
+  font-family: "EB Garamond", Garamond, "Times New Roman", serif;
+  font-size: 1.2rem;
+  line-height: 1.6;
+}
+
+.skip-link {
+  position: absolute;
+  left: -9999px;
+}
+.skip-link:focus {
+  left: 1rem;
+  top: 1rem;
+  background: var(--bg);
+  padding: 0.25rem 0.5rem;
+}
+
+.site-nav,
+main,
+footer {
+  max-width: 44rem;
+  margin: 0 auto;
+  padding: 0 1rem;
+}
+
+.site-nav {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.25rem 1.5rem;
+  padding-top: 2rem;
+  padding-bottom: 1rem;
+  border-bottom: 1px solid var(--rule);
+}
+
+.site-nav a {
+  color: var(--muted);
+  text-decoration: none;
+}
+.site-nav a:hover,
+.site-nav a[aria-current="page"] {
+  color: var(--text);
+}
+.site-nav .home {
+  margin-right: auto;
+  color: var(--text);
+  font-weight: 500;
+}
+
+main {
+  padding-top: 2rem;
+  padding-bottom: 3rem;
+}
+
+h1 {
+  font-weight: 400;
+  font-size: 2.2rem;
+  margin: 0 0 1rem;
+}
+
+footer {
+  color: var(--muted);
+  font-size: 0.95rem;
+  padding-bottom: 2rem;
+}
