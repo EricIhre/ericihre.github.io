@@ -113,16 +113,35 @@ h2 {
 .entries .years,
 .entries .location {
   text-align: right;
-  color: var(--muted);
   white-space: nowrap;
 }
 
+/* The entry's main dates stand out; location and per-role dates stay muted */
 .entries .years {
+  color: var(--text);
+  font-weight: 500;
   font-variant-numeric: oldstyle-nums;
 }
 
+.entries .location,
+.entries .role-years {
+  color: var(--muted);
+}
+
 .entries .role {
+  display: block;
   font-style: italic;
+}
+
+.entries .role-years {
+  font-style: normal;
+  font-variant-numeric: oldstyle-nums;
+}
+
+/* Line separating the CV sections */
+section + section {
+  margin-top: 2.5rem;
+  border-top: 1px solid var(--rule);
 }
 
 /* No blinking text cursor or focus outline when clicking with the mouse.
