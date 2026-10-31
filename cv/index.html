@@ -7,7 +7,7 @@
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=EB+Garamond:ital,wght@0,400;0,500;1,400&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="../assets/style.css?v=6">
+  <link rel="stylesheet" href="../assets/style.css?v=7">
 </head>
 <body>
   <a class="skip-link" href="#main">Skip to content</a>
@@ -21,28 +21,6 @@
     <h1>CV</h1>
 
     <section>
-      <h2>Education</h2>
-      <ul class="entries">
-        <li>
-          <span class="org">Lund University</span>
-          <span class="years">2019 – 2024</span>
-          <div class="roles">
-            <span class="role">MSc Engineering Mathematics</span>
-            <span class="role">Exchange studies, Technical University of Munich <span class="role-years">(2023 – 2024)</span></span>
-            <span class="role">Exchange studies, University of Tokyo <span class="role-years">(2022 – 2023)</span></span>
-          </div>
-          <span class="location">Lund, Sweden</span>
-        </li>
-        <li>
-          <span class="org">Kungsholmens gymnasium</span>
-          <span class="years">2015 – 2018</span>
-          <div class="roles"></div>
-          <span class="location">Stockholm, Sweden</span>
-        </li>
-      </ul>
-    </section>
-
-    <section>
       <h2>Work experience</h2>
       <ul class="entries">
         <li>
@@ -53,6 +31,11 @@
             <span class="role">Consultant, Financial Risk <span class="role-years">(2024 – 2026)</span></span>
           </div>
           <span class="location">Copenhagen, Denmark</span>
+          <ul class="details">
+            <li>Built regression and machine learning models in Python for stress testing and scenario analysis, delivered to Private Equity clients.</li>
+            <li>Responsible for testing a Tier 1 Nordic bank’s new capital reporting databases, writing SQL in Snowflake to validate data and reconcile reported figures against the existing production system.</li>
+            <li>Developed and analysed quantitative models (PD, LGD, EAD, Capital, Impairment) in Python for multiple Nordic banks, working with large credit portfolio datasets.</li>
+          </ul>
         </li>
         <li>
           <span class="org">RISE Research Institutes of Sweden</span>
@@ -61,6 +44,10 @@
             <span class="role">Research Assistant (Master’s Thesis), Deep Learning Group</span>
           </div>
           <span class="location">Gothenburg, Sweden</span>
+          <ul class="details">
+            <li>Developed decentralized deep learning architectures in Python and PyTorch, designing experiments and benchmarking against published baselines.</li>
+            <li>Co-authored article published in <em>Transactions on Machine Learning Research</em> (01/2025).</li>
+          </ul>
         </li>
         <li>
           <span class="org">MAG Interactive</span>
@@ -69,6 +56,10 @@
             <span class="role">Business Intelligence Analyst</span>
           </div>
           <span class="location">Stockholm, Sweden</span>
+          <ul class="details">
+            <li>Built churn prediction and user segmentation models on a 2M+ daily players dataset (Python, BigQuery), supporting UA spend and retention strategy.</li>
+            <li>Created SQL and Python code for product teams used for daily decision making.</li>
+          </ul>
         </li>
         <li>
           <span class="org">Qred Bank</span>
@@ -77,6 +68,9 @@
             <span class="role">Data Scientist</span>
           </div>
           <span class="location">Stockholm, Sweden</span>
+          <ul class="details">
+            <li>Built gradient boosting models (XGBoost, CatBoost) and deep learning models (PyTorch) in Python to estimate default risk and expected profitability for SME loan applications.</li>
+          </ul>
         </li>
         <li>
           <span class="org">MAG Interactive</span>
@@ -95,6 +89,50 @@
           <span class="location">Stockholm, Sweden</span>
         </li>
       </ul>
+    </section>
+
+    <section>
+      <h2>Education</h2>
+      <ul class="entries">
+        <li>
+          <span class="org">Lund University</span>
+          <span class="years">2019 – 2024</span>
+          <div class="roles">
+            <span class="role">MSc Engineering Mathematics, GPA 4.4/5.0 (top 10%)</span>
+            <span class="role">Exchange studies, Technical University of Munich <span class="role-years">(2023 – 2024)</span></span>
+            <span class="role">Exchange studies, University of Tokyo <span class="role-years">(2022 – 2023)</span></span>
+          </div>
+          <span class="location">Lund, Sweden</span>
+          <ul class="details">
+            <li>Relevant courses: Stationary Stochastic Processes, Monte Carlo and Empirical Methods for Stochastic Inference, Statistical Modelling of Extreme Values, Linear and Logistic Regression, Probability Theory, Machine Learning for Multimedia Processing, Numerical Methods for Differential Equations.</li>
+            <li>CentraleSupélec’s Summer School on Artificial Intelligence, 2023.</li>
+          </ul>
+        </li>
+        <li>
+          <span class="org">Kungsholmens gymnasium</span>
+          <span class="years">2015 – 2018</span>
+          <div class="roles"></div>
+          <span class="location">Stockholm, Sweden</span>
+        </li>
+      </ul>
+    </section>
+
+    <section>
+      <h2>Skills &amp; interests</h2>
+      <dl class="skills">
+        <dt>Programming</dt>
+        <dd>Python (PyTorch, Scikit-learn, XGBoost, CatBoost, Pandas, NumPy), SQL, R, Java, MATLAB</dd>
+        <dt>Software &amp; tools</dt>
+        <dd>Git, LaTeX, BigQuery, Linux, Power BI, Tableau</dd>
+        <dt>AI tools</dt>
+        <dd>Comfortable working with LLMs and modern AI workflow tools (e.g. Cursor, Claude, ChatGPT).</dd>
+        <dt>Languages</dt>
+        <dd>Swedish (native), English (fluent), Danish (professional)</dd>
+        <dt>Climbing</dt>
+        <dd>Competitive climber with 2 bronze medals in the Swedish Junior Bouldering Championship.</dd>
+        <dt>Scholarships</dt>
+        <dd>Scandinavia-Japan Sasakawa Foundation, Anna Whitlocks Memorial Fund, Gustaf Söderbergs Scholarship, and Thorild Dahlgren Foundation</dd>
+      </dl>
     </section>
   </main>
   <footer>&copy; 2026 Eric Ihre-Thomason</footer>

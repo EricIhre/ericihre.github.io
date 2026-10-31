@@ -79,6 +79,7 @@ h1 {
 }
 
 footer {
+  text-align: center;
   color: var(--muted);
   font-size: 0.95rem;
   padding-bottom: 2rem;
@@ -136,6 +137,45 @@ h2 {
 .entries .role-years {
   font-style: normal;
   font-variant-numeric: oldstyle-nums;
+}
+
+/* Bullet points under a CV entry, spanning the full width */
+.entries .details {
+  grid-column: 1 / -1;
+  list-style: disc;
+  margin: 0.35rem 0 0;
+  padding-left: 1.25rem;
+}
+
+.entries .details li {
+  display: list-item;
+  margin-bottom: 0.2rem;
+}
+
+/* Skills: label on the left, text on the right */
+.skills {
+  display: grid;
+  grid-template-columns: 10rem minmax(0, 1fr);
+  gap: 0.4rem 1.5rem;
+  margin: 0;
+}
+
+.skills dt {
+  font-weight: 500;
+}
+
+.skills dd {
+  margin: 0;
+}
+
+@media (max-width: 520px) {
+  .skills {
+    grid-template-columns: 1fr;
+    gap: 0;
+  }
+  .skills dd {
+    margin-bottom: 0.6rem;
+  }
 }
 
 /* Home page: first heading lines up with the top of the photo */
