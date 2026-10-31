@@ -1,89 +1,115 @@
-# ericihre.github.io — Personal Site & CV
+# ericihre.github.io: Personal Site & CV
 
 ## Goal
 
-A minimal, text-first personal website hosted on GitHub Pages at
-`https://ericihre.github.io/`, modeled on the structure of
-[edvinli.github.io/cv](https://edvinli.github.io/cv/): a short header that says
-who I am, a CV page in plain reverse-chronological sections, and room for a few
-project pages.
+A minimal, text-first personal website at **https://ericihre.github.io/**,
+hosted on GitHub Pages. It was inspired by the structure of
+[edvinli.github.io/cv](https://edvinli.github.io/cv/). The home page is a short
+CV with a photo, a CV page has the full details, and there are pages for
+research and projects.
 
-## Reference: what the inspiration site does
+## Status (2026-10-31)
 
-- **Site-wide top nav:** name (home), CV, Work, Research, plus links to individual projects.
-- **Header block:** profile photo, name in lowercase, a one-line tagline
-  (e.g. "senior ml engineer, phd"), location, and a row of links (email,
-  Google Scholar, GitHub, LinkedIn, X/Twitter).
-- **CV page:** single column, lowercase section headings, in this order:
-  1. education: years, degree, institution
-  2. work experience: years, title, linked employer, optional one-line note
-  3. grants: year, title, funder, amount
-- **Footer:** a single copyright line.
-- **Style:** minimal. No sidebar, no cards, no animation. Content comes first.
-- **Accessibility:** a "Skip to content" link at the top.
+All of the work below is live, deployed from `main`.
 
-## Scope
+| Page | Path | State |
+|---|---|---|
+| Home | `index.html` | Done. Photo placeholder, contact links, short CV |
+| CV | `cv/index.html` | Done. Full CV with bullet points and skills |
+| Research | `research/index.html` | Done. Paper and master's thesis |
+| Projects | `projects/index.html` | Empty, title only |
 
-### v1 (must have)
-- [ ] `index.html`: home page with header block (photo, name, tagline, links) and a short bio
-- [ ] `cv/index.html`: CV page with education and work experience sections
-- [ ] Shared nav and footer on every page
-- [ ] One shared stylesheet that works in light and dark mode (`prefers-color-scheme`)
-- [ ] Responsive: readable on a phone with no horizontal scroll
-- [ ] Deployed via GitHub Pages from `main`
+### Home page (`/`)
+- Left column: photo placeholder box (dashed), then email, phone and GitHub links.
+- Right column: short CV with no page title (the name is already in the header).
+  - **Education:** Lund University (MSc Engineering Mathematics) with plain-text
+    lines for exchanges (TUM, Tokyo) and the CentraleSupélec summer school.
+  - **Work experience:** Deloitte, RISE, MAG Interactive (2023), Qred Bank.
+    The internships are left out to keep it short.
+- On phones the photo and contact links stack above the CV.
 
-### Later (nice to have)
-- [ ] `work/` and `research/` pages (projects, publications)
-- [ ] Extra CV sections if relevant: grants/awards, skills, publications, talks
-- [ ] Downloadable PDF CV
-- [ ] Individual project pages linked from the nav
-- [ ] Favicon and Open Graph meta tags for link previews
+### CV page (`/cv/`)
+- Order: **Work experience**, then **Education**, then **Skills & interests**.
+- Every job from the PDF CV, including the internships, with its bullet points.
+  The RISE bullet links to the TMLR paper.
+- Education: Lund (GPA, exchanges, courses and summer school as bullets) and
+  Kungsholmens gymnasium (2015 – 2018).
+- Skills & interests: label/value rows (programming, tools, AI tools,
+  languages, climbing, scholarships).
 
-### Out of scope
-- Blog/CMS, analytics, contact forms, JS frameworks.
+### Research page (`/research/`)
+- Paper first, then the thesis, each with a bold label before the title:
+  - **Paper:** *On the effects of similarity metrics in decentralized deep
+    learning under distributional shift* (2025, TMLR). Co-authored with
+    Edvin Listo Zec, Tom Hagander and Sarunas Girdzijauskas.
+    Link: [PDF](https://openreview.net/pdf?id=WppTEs4Kkn).
+  - **Master's thesis:** *With a Little Help from My Friends: A Comparative
+    Study of Decentralized Deep Learning Strategies* (2024, Lund University).
+    Co-authored with Tom Hagander.
+    Link: [record](https://lup.lub.lu.se/student-papers/record/9159064).
+- Each entry has a summary paragraph and a link below it.
 
-## Tech
+## Design decisions
 
-- **Plain static HTML + CSS**, no build step. GitHub Pages serves the repo root directly.
-- No JavaScript unless a specific feature needs it.
-- System font stack, or one web font at most.
-- Option: switch to Jekyll later if repeating the nav/footer by hand gets tedious.
-  GitHub Pages builds Jekyll natively.
+- **Font:** EB Garamond (Google Fonts). It's a free Garamond; the commercial
+  Garamond isn't licensed for the web. Fallback: `Garamond`, then serif.
+- **Colors:** warm off-white in light mode and near-black in dark mode, following
+  the system setting. Defined as CSS variables (`--bg`, `--text`, `--muted`,
+  `--rule`).
+- **Header:** the name on the left links home; CV · Research · Projects are on
+  the right. The current page is shown brighter.
+- **Entry layout** (shared by home, CV and research):
+  - Title in bold on the left, with the **main dates on the right in bold/bright**.
+  - Under the title: role or subtitle in *italics*. Secondary lines
+    (exchanges, summer school) are in normal text, and per-role dates follow
+    in parentheses in muted grey.
+  - Under the dates: the location (or venue) in muted grey.
+  - Bullet points or summaries span the full width below.
+- **No separator lines** between sections; each section heading has its own underline.
+- **Page width:** 60rem max, so the dates sit at the far right in line with the nav.
+- **Stable header:** `scrollbar-gutter: stable` stops the header shifting
+  sideways between short and long pages.
+- **Same spacing** between the page title and the first content on every page.
+- **Footer:** centered copyright line.
+- **No click artifacts:** no text caret or mouse-focus outline when clicking.
+  Keyboard users still get focus outlines.
 
-## Proposed structure
+## Tech & conventions
+
+- Plain static HTML and CSS, no build step and no JavaScript.
+- One stylesheet: `assets/style.css`.
+- **Cache-busting:** every page links `assets/style.css?v=N`. **Bump `N` on
+  all four pages whenever the CSS changes**, because GitHub Pages tells browsers
+  to cache CSS for 10 minutes and visitors would otherwise see stale styles.
+  The current version is `v=11`.
+- The nav, footer and `<head>` are copied into each page by hand. Edit all
+  four pages when changing them.
+- The home and CV pages each hold their own copy of the entries; editing one
+  doesn't update the other.
+- Deploys take about 30–60 seconds after a push to `main`.
+- **Privacy:** the source CV PDF contains a home address, so `.gitignore`
+  excludes `*.pdf`. Don't commit it. A public PDF CV would need a redacted copy.
+
+## Structure
 
 ```
 /
-├── index.html          # home / about
-├── cv/
-│   └── index.html      # CV
-├── work/index.html     # (later)
-├── research/index.html # (later)
-├── assets/
-│   ├── style.css
-│   └── profile.jpg
+├── index.html            # home: photo + short CV
+├── cv/index.html         # full CV
+├── research/index.html   # paper + thesis
+├── projects/index.html   # (empty)
+├── assets/style.css      # all styles
+├── .gitignore            # excludes *.pdf
 └── PROJECT.md
 ```
 
-## Content I need to provide
+## Next up
 
-- [ ] Display name and tagline
-- [ ] Location
-- [ ] Profile photo
-- [ ] Links: email, GitHub, LinkedIn, others?
-- [ ] Short bio (2–4 sentences)
-- [ ] Education entries (years, degree, institution)
-- [ ] Work entries (years, title, employer + URL)
-- [ ] Any grants/awards/publications to list
-
-## Design direction (to decide)
-
-- Keep the reference's plain lowercase style, or add a small distinctive touch
-  of my own (accent color, typeface)?
-- Language: English, Swedish, or both?
-
-## Definition of done (v1)
-
-The live site at `https://ericihre.github.io/` shows the home page and CV with
-my real content. It reads well on desktop and mobile, in light and dark mode,
-and the nav works on every page.
+- [ ] Replace the photo placeholder with a real photo (`assets/profile.jpg`)
+- [ ] Fill in the Projects page
+- [ ] Decide whether CentraleSupélec on the CV page should match the home page
+      (plain line instead of a bullet)
+- [ ] Favicon and Open Graph meta tags for link previews
+- [ ] Optional: downloadable PDF CV (redacted, without the address)
+- [ ] Optional: switch to Jekyll includes if editing the nav/footer in four
+      places gets tedious
