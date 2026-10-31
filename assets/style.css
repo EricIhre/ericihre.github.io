@@ -121,7 +121,17 @@ h2 {
 
 /* Research: "Paper:" / "Master's thesis:" label before the title */
 .entries .kind {
-  font-weight: 600;
+  font-weight: 700;
+}
+
+/* Research: title and co-authors on the left, date with venue directly under it */
+.entries .org,
+.entries .meta span {
+  display: block;
+}
+
+main > .entries .org {
+  font-weight: 400;
 }
 
 /* Research entries get more breathing room */
