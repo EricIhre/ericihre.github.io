@@ -157,8 +157,14 @@ main > .entries > li {
 }
 
 .entries .location,
-.entries .role-years {
+.entries .role-years,
+.entries .org-note {
   color: var(--muted);
+}
+
+/* CV: "(Financial Risk)" after Deloitte, "(Research Institutes of Sweden)" after RISE */
+.entries .org-note {
+  font-weight: 400;
 }
 
 .entries .role {
