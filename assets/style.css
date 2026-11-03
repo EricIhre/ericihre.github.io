@@ -286,14 +286,17 @@ main > .entries > li {
   }
 }
 
-/* Phones: let long locations wrap instead of overflowing */
+/* Phones: smaller text, and only the city under the date
+   (title | date on the first row, subtitle | city on the second) */
 @media (max-width: 520px) {
+  body {
+    font-size: 1rem;
+  }
   .entries li {
     gap: 0 0.75rem;
   }
-  .entries .location {
-    white-space: normal;
-    max-width: 7rem;
+  .entries .country {
+    display: none;
   }
 }
 
