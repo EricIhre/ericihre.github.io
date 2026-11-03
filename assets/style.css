@@ -281,8 +281,20 @@ main > .entries > li {
     grid-template-columns: 1fr;
     gap: 1.5rem;
   }
+  /* Contact links to the right of the photo instead of below it */
+  .sidebar {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+  }
   .photo {
-    width: 10rem;
+    width: 7rem;
+    flex-shrink: 0;
+  }
+  .contact {
+    margin: 0;
+    min-width: 0;
+    overflow-wrap: normal;
   }
 }
 
