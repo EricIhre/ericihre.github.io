@@ -286,17 +286,43 @@ main > .entries > li {
   }
 }
 
+/* Shorter wording on phones: .desktop-only text is hidden there,
+   .mobile-only text is shown only there, .mobile-row starts a new line there */
+.mobile-only {
+  display: none;
+}
+
 /* Phones: smaller text, and only the city under the date
    (title | date on the first row, subtitle | city on the second) */
 @media (max-width: 520px) {
   body {
     font-size: 1rem;
   }
+  .desktop-only {
+    display: none;
+  }
+  .mobile-only {
+    display: inline;
+  }
+  .mobile-row {
+    display: block;
+  }
   .entries li {
     gap: 0 0.75rem;
   }
   .entries .country {
     display: none;
+  }
+  /* Home page: subtitle rows may use the full width; the city sits on the
+     right of the first subtitle row (those rows are short enough to fit) */
+  .home .entries .roles {
+    grid-column: 1 / -1;
+    grid-row: 2;
+  }
+  .home .entries .location {
+    grid-column: 2;
+    grid-row: 2;
+    align-self: start;
   }
 }
 
