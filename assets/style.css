@@ -253,21 +253,14 @@ main > .entries > li {
   align-items: start;
 }
 
-/* Whole photo at its own aspect ratio, as wide as the sidebar column;
-   the edges fade softly into the page background (a mask, so it works
-   in light and dark mode) */
+/* Whole photo at its own aspect ratio, as wide as the sidebar column,
+   with the same dashed outline the placeholder had */
 .photo {
   display: block;
   width: 100%;
   height: auto;
-  -webkit-mask-image:
-    linear-gradient(to right, transparent, #000 8%, #000 92%, transparent),
-    linear-gradient(to bottom, transparent, #000 6%, #000 94%, transparent);
-  -webkit-mask-composite: source-in;
-  mask-image:
-    linear-gradient(to right, transparent, #000 8%, #000 92%, transparent),
-    linear-gradient(to bottom, transparent, #000 6%, #000 94%, transparent);
-  mask-composite: intersect;
+  border: 1px dashed var(--muted);
+  border-radius: 4px;
 }
 
 .contact {
