@@ -20,7 +20,7 @@ All of the work below is live, deployed from `main`.
 | Projects | `projects/index.html` | Empty, title only |
 
 ### Home page (`/`)
-- Left column: photo (dashed outline), then email, phone, LinkedIn and GitHub links.
+- Left column: photo (rounded corners), then email, phone, LinkedIn and GitHub links.
 - Right column: short CV with no page title (the name is already in the header).
   - **Education:** Lund University (MSc Engineering Mathematics) with plain-text
     lines for exchanges (TUM, Tokyo) and the CentraleSupélec summer school.

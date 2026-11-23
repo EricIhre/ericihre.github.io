@@ -254,12 +254,11 @@ main > .entries > li {
 }
 
 /* Whole photo at its own aspect ratio, as wide as the sidebar column,
-   with the same dashed outline the placeholder had */
+   with slightly rounded corners */
 .photo {
   display: block;
   width: 100%;
   height: auto;
-  border: 1px dashed var(--muted);
   border-radius: 4px;
 }
 
