@@ -253,14 +253,13 @@ main > .entries > li {
   align-items: start;
 }
 
-/* Photo cropped to 3:4 around the face; the edges fade softly into
-   the page background (a mask, so it works in light and dark mode) */
+/* Whole photo at its own aspect ratio, as wide as the sidebar column;
+   the edges fade softly into the page background (a mask, so it works
+   in light and dark mode) */
 .photo {
   display: block;
   width: 100%;
-  aspect-ratio: 3 / 4;
-  object-fit: cover;
-  object-position: 55% center;
+  height: auto;
   -webkit-mask-image:
     linear-gradient(to right, transparent, #000 8%, #000 92%, transparent),
     linear-gradient(to bottom, transparent, #000 6%, #000 94%, transparent);
