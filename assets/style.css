@@ -253,15 +253,22 @@ main > .entries > li {
   align-items: start;
 }
 
+/* Photo cropped to 3:4 around the face; the edges fade softly into
+   the page background (a mask, so it works in light and dark mode) */
 .photo {
+  display: block;
+  width: 100%;
   aspect-ratio: 3 / 4;
-  border: 1px dashed var(--muted);
-  border-radius: 4px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  color: var(--muted);
-  font-style: italic;
+  object-fit: cover;
+  object-position: 55% center;
+  -webkit-mask-image:
+    linear-gradient(to right, transparent, #000 8%, #000 92%, transparent),
+    linear-gradient(to bottom, transparent, #000 6%, #000 94%, transparent);
+  -webkit-mask-composite: source-in;
+  mask-image:
+    linear-gradient(to right, transparent, #000 8%, #000 92%, transparent),
+    linear-gradient(to bottom, transparent, #000 6%, #000 94%, transparent);
+  mask-composite: intersect;
 }
 
 .contact {

@@ -14,13 +14,13 @@ All of the work below is live, deployed from `main`.
 
 | Page | Path | State |
 |---|---|---|
-| Home | `index.html` | Done. Photo placeholder, contact links, short CV |
+| Home | `index.html` | Done. Photo, contact links, short CV |
 | CV | `cv/index.html` | Done. Full CV with bullet points and skills |
 | Research | `research/index.html` | Done. Paper and master's thesis |
 | Projects | `projects/index.html` | Empty, title only |
 
 ### Home page (`/`)
-- Left column: photo placeholder box (dashed), then email, phone, LinkedIn and GitHub links.
+- Left column: photo (edges fade into the page background), then email, phone, LinkedIn and GitHub links.
 - Right column: short CV with no page title (the name is already in the header).
   - **Education:** Lund University (MSc Engineering Mathematics) with plain-text
     lines for exchanges (TUM, Tokyo) and the CentraleSupélec summer school.
@@ -105,7 +105,7 @@ All of the work below is live, deployed from `main`.
 
 ## Next up
 
-- [ ] Replace the photo placeholder with a real photo (`assets/profile.jpg`)
+- [x] Replace the photo placeholder with a real photo (`assets/profile.jpg`)
 - [ ] Fill in the Projects page
 - [ ] Decide whether CentraleSupélec on the CV page should match the home page
       (plain line instead of a bullet)
