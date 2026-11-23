@@ -1,2 +1,5 @@
 # Source CV contains private contact details; keep it out of the public repo
 *.pdf
+
+# Full-size original photos; the site uses the smaller assets/profile.jpg
+assets/foto uganda*.jpg
